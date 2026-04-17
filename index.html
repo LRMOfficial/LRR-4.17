@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- SEO Meta Tags -->
+    <title>LIFE ROW RECORDS // Soulful Beats & Lo-Fi Instrumental Store</title>
+    <meta name="description" content="Life Row Records is your premier destination for soulful lo-fi beats and professional instrumentals. Independent record label providing high-quality sonics, buy beats, and custom music production for artists and creators." />
+    <meta name="keywords" content="buy beats, beat store, lo-fi beats, soulful instrumentals, hip hop producer, rap beats for sale, indie record label, music production, Philadelphia record label, chill beats, Life Row Records, OCSol, Magnolia, instrumental music" />
+    <meta name="author" content="Life Row Records" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://liferowrecords.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://liferowrecords.com/" />
+    <meta property="og:title" content="LIFE ROW RECORDS // Soulful Beats & Instrumental Store" />
+    <meta property="og:description" content="Premium lo-fi beats and soulful instrumentals. Explore the roster and buy high-quality production from Life Row Records." />
+    <meta property="og:image" content="https://i.imgur.com/vP1Wclv.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://liferowrecords.com/" />
+    <meta property="twitter:title" content="LIFE ROW RECORDS // Soulful Beats & Instrumental Store" />
+    <meta property="twitter:description" content="Premium lo-fi beats and soulful instrumentals from the Vibe House." />
+    <meta property="twitter:image" content="https://i.imgur.com/vP1Wclv.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                plum: '#D89DE6',
+                red: '#DA665D',
+                blue: '#8AB9D1',
+                straw: '#E2E28A',
+                olivine: '#92AE5B',
+              }
+            },
+            fontFamily: {
+              sans: ['Comfortaa', 'sans-serif'],
+              mono: ['IBM Plex Mono', 'monospace'],
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+        background-color: #000000;
+      }
+
+      body {
+        font-family: 'Comfortaa', sans-serif;
+        color: #ffffff;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      @keyframes backgroundDrift {
+        0% { transform: translate(0, 0) scale(1.1); }
+        33% { transform: translate(-1.5%, 1%) scale(1.13); }
+        66% { transform: translate(1.5%, -1%) scale(1.1); }
+        100% { transform: translate(0, 0) scale(1.1); }
+      }
+
+      @keyframes titleEntrance {
+        0% {
+          opacity: 0;
+          transform: scale(0.96) translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-title-entrance {
+        opacity: 0;
+        animation: titleEntrance 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .animate-fade-in-up {
+        opacity: 0;
+        animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Global background image setup with the requested 'money-pic' */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-image: url('https://i.imgur.com/vP1Wclv.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+        opacity: 0.35;
+        animation: backgroundDrift 80s ease-in-out infinite;
+        filter: brightness(0.7) contrast(1.1);
+        pointer-events: none;
+        will-change: transform;
+      }
+
+      /* Dark gradient to ensure readability and blend with background */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .mono { font-family: 'IBM Plex Mono', monospace; }
+      
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #000000; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #555; }
+      
+      .image-reveal {
+        transition: filter 0.8s ease, transform 0.8s ease;
+      }
+
+      ::selection {
+        background-color: #8AB9D1;
+        color: black;
+      }
+
+      #root {
+        width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
