@@ -12,24 +12,30 @@ const Privacy: React.FC = () => {
       content: "We collect personal information that you voluntarily provide to us, including but not limited to your name, email address, and phone number when you register for updates, contact our production department, or engage in commercial transactions. We also automatically collect certain technical information, such as IP addresses and browser types, to analyze site traffic and improve user experience."
     },
     {
-      title: "3. No Sharing of Personal Information",
-      content: "Life Row Records maintains a strict policy regarding the privacy of our users. We do not sell, rent, trade, or otherwise share your email address or phone number with third-party organizations for marketing or commercial purposes. Your contact information is used exclusively for internal operations and requested communications."
+      title: "3. Data Sharing",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Customer data is not shared with 3rd parties for promotional or marketing purposes.</li>
+          <li>Mobile opt-in and consent are never shared with anyone for any purpose. Any information sharing that may be mentioned elsewhere in this policy excludes mobile opt-in data.</li>
+        </ul>
+      )
     },
     {
-      title: "4. Use of Information",
-      content: "The information we collect is utilized to provide and improve our services, process transactions, communicate administrative updates, and deliver requested content. We may also use data for internal analytical purposes to enhance the technical performance of our platform."
+      title: "4. Life Row Records, LLC Messaging Terms and Conditions",
+      content: (
+        <ol className="list-decimal pl-5 space-y-4">
+          <li>The messaging program consists of general conversational messaging to answer questions and provide support to customers.</li>
+          <li>You can cancel the SMS service at any time. Just text 'STOP' to the phone number from which you received messages. After you send the SMS message 'STOP' to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.</li>
+          <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at dudlyulysse@liferowmusic.com.</li>
+          <li>Carriers are not liable for delayed or undelivered messages.</li>
+          <li>As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency will vary based on communication needs. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</li>
+          <li>If you have any questions regarding privacy, please read our privacy policy contained in the rest of this document/page.</li>
+        </ol>
+      )
     },
     {
       title: "5. Data Security",
       content: "We implement industry-standard administrative, technical, and physical security measures to safeguard your personal information against unauthorized access, disclosure, or modification. While we strive to protect your data, no transmission over the internet can be guaranteed as completely secure."
-    },
-    {
-      title: "6. Your Rights and Choices",
-      content: "Users possess the right to access, rectify, or request the deletion of their personal data maintained in our records. You may opt-out of promotional communications at any time by following the unsubscribe instructions provided in such transmissions."
-    },
-    {
-      title: "7. Cookies and Tracking Technologies",
-      content: "Our website utilizes cookies and similar tracking technologies to monitor site activity and store user preferences. You may configure your browser settings to refuse cookies; however, please note that certain components of our services may not function as intended without them."
     }
   ];
 
@@ -63,9 +69,9 @@ const Privacy: React.FC = () => {
             <h3 className="text-xl md:text-2xl font-bold text-brand-red italic uppercase tracking-tight">
               {section.title}
             </h3>
-            <p className="text-white/60 text-sm md:text-base leading-relaxed font-medium">
+            <div className="text-white/60 text-sm md:text-base leading-relaxed font-medium">
               {section.content}
-            </p>
+            </div>
           </motion.div>
         ))}
       </div>

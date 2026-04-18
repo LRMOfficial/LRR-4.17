@@ -194,7 +194,7 @@ const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
               <div className="bg-white/5 border border-white/10 rounded-[2rem] p-6 h-32 overflow-y-auto custom-scrollbar space-y-4">
                 <p className="text-[10px] md:text-xs text-white/40 leading-relaxed font-medium">
                   <span className="text-white/80 block mb-1 uppercase font-black text-[9px] tracking-widest">DATA PROTECTION//</span>
-                  Life Row Records maintains a zero-sharing policy. Your personal intelligence is used strictly for internal production queueing.
+                  Life Row Records maintains a zero-sharing policy. Customer data and mobile opt-in consent are not shared with 3rd parties for promotional or marketing purposes.
                 </p>
                 <p className="text-[10px] md:text-xs text-white/40 leading-relaxed font-medium">
                   <span className="text-white/80 block mb-1 uppercase font-black text-[9px] tracking-widest">SONIC INTEGRITY//</span>

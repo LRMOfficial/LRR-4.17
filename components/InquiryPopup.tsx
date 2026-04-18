@@ -164,7 +164,7 @@ const InquiryPopup: React.FC<InquiryPopupProps> = ({ isOpen, onClose, onNavigate
                       <div className="bg-white/[0.03] border-2 border-white/5 rounded-[2rem] p-6 h-36 overflow-y-auto custom-scrollbar space-y-6">
                         <p className="text-[11px] md:text-xs text-white/40 leading-relaxed font-medium">
                           <span className="text-white/80 block mb-2 uppercase font-black text-[9px] md:text-[10px] tracking-widest">DATA PROTECTION//</span>
-                          Life Row Records maintains a zero-sharing policy. Your personal intelligence (Name, Email, Phone) is used strictly for internal production queueing. We do not sell, rent, or trade your data with third parties.
+                          Life Row Records maintains a zero-sharing policy. Customer data and mobile opt-in consent are not shared with 3rd parties for promotional or marketing purposes.
                         </p>
                         <p className="text-[11px] md:text-xs text-white/40 leading-relaxed font-medium">
                           <span className="text-white/80 block mb-2 uppercase font-black text-[9px] md:text-[10px] tracking-widest">COMMERCIAL INTENT//</span>
