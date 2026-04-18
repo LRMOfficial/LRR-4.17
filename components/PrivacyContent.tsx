@@ -25,7 +25,7 @@ const PrivacyContent: React.FC = () => {
       content: (
         <ol className="list-decimal pl-5 space-y-4">
           <li>The messaging program consists of general conversational messaging to answer questions and provide support to customers.</li>
-          <li>You can cancel the SMS service at any time. Just text 'STOP' to the phone number from which you received messages. After you send the SMS message 'STOP' to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.</li>
+          <li>You can cancel the SMS service at any time. Just text 'STOP' to the phone number (215-701-3921) from which you received messages. After you send the SMS message 'STOP' to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.</li>
           <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at dudlyulysse@liferowmusic.com.</li>
           <li>Carriers are not liable for delayed or undelivered messages.</li>
           <li>As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency will vary based on communication needs. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</li>
