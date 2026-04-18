@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Page } from '../types';
 import InquiryPopup from '../components/InquiryPopup';
+import PrivacyContent from '../components/PrivacyContent';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
@@ -10,7 +11,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   return (
-    <div className="space-y-16 md:space-y-24 bg-transparent">
+    <div className="space-y-16 md:space-y-24 bg-transparent pb-16">
       {/* Inquiry Modal */}
       <InquiryPopup 
         isOpen={isInquiryOpen} 
@@ -50,7 +51,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Traktrain Player Section - Colorful & No Grayscale Effect */}
+      {/* Traktrain Player Section */}
       <section className="w-screen relative left-1/2 -ml-[50vw] bg-transparent border-y-4 border-white/20 py-8 md:py-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden group/player">
         <div className="max-w-7xl mx-auto px-10 md:px-5">
           <div className="flex items-center justify-between mb-4 px-2">
@@ -61,14 +62,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <span className="mono text-[9px] text-white/30 uppercase tracking-[0.2em] font-bold hidden sm:inline">Analog_Signal_v2.7</span>
           </div>
           
-          <div className="w-full bg-zinc-900/60 backdrop-blur-sm rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 relative min-h-[7000px] transition-all duration-700">
+          <div className="w-full bg-zinc-900/60 backdrop-blur-sm rounded-[2rem] md:rounded-[3rem] overflow-hidden border-2 border-white/10 relative min-h-[700px]">
              <iframe 
                src="https://traktrain.com/widget/270590" 
                width="100%" 
-               height="7000" 
+               height="700" 
                frameBorder="0"
-               className="w-full transition-all duration-700"
-               style={{ height: '7000px' }}
+               className="w-full"
+               style={{ height: '700px' }}
              ></iframe>
           </div>
         </div>
@@ -121,6 +122,30 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             alt="Life Row Nostalgia" 
             className="w-full h-full object-cover grayscale md:group-hover:grayscale-0 transition-all duration-700 image-reveal group-hover:scale-105 md:group-hover:scale-110"
           />
+        </div>
+      </section>
+
+      {/* Privacy Policy Section at the bottom */}
+      <section className="pt-24 md:pt-32 border-t-4 border-white/5 px-4 max-w-4xl mx-auto">
+        <div className="space-y-10 md:space-y-12">
+          <div className="space-y-4 text-center md:text-left">
+            <div className="inline-block bg-brand-blue text-white px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase italic animate-pulse">
+              Legal Transparency//
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.9] text-white">
+              DATA<br/><span className="text-brand-blue">DIRECTIVE//</span>
+            </h2>
+          </div>
+          
+          <div className="bg-zinc-900 shadow-2xl rounded-[2.5rem] md:rounded-[4rem] border-4 border-white/10 p-8 md:p-14">
+            <PrivacyContent />
+          </div>
+
+          <div className="pt-10 text-center">
+            <p className="text-[10px] text-white/20 font-bold uppercase tracking-[0.5em] italic">
+              Life Row Records. Secure. Private. Pure.
+            </p>
+          </div>
         </div>
       </section>
     </div>
