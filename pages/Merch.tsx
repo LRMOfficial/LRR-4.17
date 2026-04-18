@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import EmailPopup from '../components/EmailPopup';
+import InquiryPopup from '../components/InquiryPopup';
+import { Page } from '../types';
 
-const Merch: React.FC = () => {
+interface MerchProps {
+  onNavigate?: (page: Page) => void;
+}
+
+const Merch: React.FC<MerchProps> = ({ onNavigate }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-16 py-12">
-      {showPopup && <EmailPopup onClose={() => setShowPopup(false)} />}
+      <InquiryPopup 
+        isOpen={showPopup} 
+        onClose={() => setShowPopup(false)} 
+        onNavigate={onNavigate}
+      />
       
       <div className="relative">
         <div className="absolute -inset-16 bg-brand-blue/5 blur-[100px] rounded-full"></div>

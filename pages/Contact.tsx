@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 
+import { Page } from '../types';
+import { ShieldCheck, ExternalLink } from 'lucide-react';
+
 const FORMSPREE_ID = "maqyqobv";
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  onNavigate?: (page: Page) => void;
+}
+
+const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    number: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -23,7 +31,7 @@ const Contact: React.FC = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        resetForm();
       } else {
         setStatus('error');
       }
@@ -37,6 +45,10 @@ const Contact: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const resetForm = () => {
+    setFormData({ name: '', email: '', number: '', message: '' });
   };
 
   return (
@@ -136,6 +148,18 @@ const Contact: React.FC = () => {
               />
             </div>
             <div className="space-y-2 md:space-y-3">
+              <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-4 text-white/40">Phone Number//</label>
+              <input 
+                required
+                type="tel" 
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                placeholder="215.XXX.XXXX" 
+                className="w-full bg-zinc-900 border-2 md:border-4 border-white/10 rounded-full px-6 md:px-8 py-4 md:py-5 focus:outline-none focus:ring-4 focus:ring-brand-blue/20 transition-all font-bold placeholder:text-white/10 text-sm md:text-base text-white" 
+              />
+            </div>
+            <div className="space-y-2 md:space-y-3">
               <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-4 text-white/40">The Message//</label>
               <textarea 
                 required
@@ -160,6 +184,32 @@ const Contact: React.FC = () => {
                   Transmission interference. Please check your signal.
                 </p>
               )}
+            </div>
+
+            <div className="pt-8 border-t-2 border-white/5 space-y-6">
+              <div className="flex items-center gap-3 text-brand-blue">
+                <ShieldCheck className="w-5 h-5" />
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">PRIVACY DIRECTIVE//</span>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-[2rem] p-6 h-32 overflow-y-auto custom-scrollbar space-y-4">
+                <p className="text-[10px] md:text-xs text-white/40 leading-relaxed font-medium">
+                  <span className="text-white/80 block mb-1 uppercase font-black text-[9px] tracking-widest">DATA PROTECTION//</span>
+                  Life Row Records maintains a zero-sharing policy. Your personal intelligence is used strictly for internal production queueing.
+                </p>
+                <p className="text-[10px] md:text-xs text-white/40 leading-relaxed font-medium">
+                  <span className="text-white/80 block mb-1 uppercase font-black text-[9px] tracking-widest">SONIC INTEGRITY//</span>
+                  By submitting, you agree to receive professional communications regarding your request. You may opt-out at any time.
+                </p>
+                {onNavigate && (
+                  <button
+                    type="button"
+                    onClick={() => onNavigate(Page.Privacy)}
+                    className="flex items-center gap-2 text-brand-blue hover:text-white transition-colors text-[9px] md:text-[10px] font-bold uppercase tracking-widest pt-2"
+                  >
+                    Read Full Privacy Policy <ExternalLink className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
             </div>
           </form>
         )}

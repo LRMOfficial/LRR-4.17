@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import Layout from './components/Layout';
-import EmailPopup from './components/EmailPopup';
+import InquiryPopup from './components/InquiryPopup';
 import Home from './pages/Home';
 import Artists from './pages/Artists';
 import Merch from './pages/Merch';
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setShowPopup(true);
-      }, 2500);
+      }, 2600);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -32,9 +32,9 @@ const App: React.FC = () => {
     switch (currentPage) {
       case Page.Home: return <Home onNavigate={setCurrentPage} />;
       case Page.Artists: return <Artists />;
-      case Page.Merch: return <Merch />;
-      case Page.Downloads: return <Downloads />;
-      case Page.Contact: return <Contact />;
+      case Page.Merch: return <Merch onNavigate={setCurrentPage} />;
+      case Page.Downloads: return <Downloads onNavigate={setCurrentPage} />;
+      case Page.Contact: return <Contact onNavigate={setCurrentPage} />;
       case Page.Privacy: return <Privacy />;
       default: return <Home onNavigate={setCurrentPage} />;
     }
@@ -45,7 +45,11 @@ const App: React.FC = () => {
       <Layout activePage={currentPage} onNavigate={setCurrentPage}>
         {renderPage()}
       </Layout>
-      {showPopup && <EmailPopup onClose={handleClosePopup} />}
+      <InquiryPopup 
+        isOpen={showPopup} 
+        onClose={handleClosePopup} 
+        onNavigate={setCurrentPage}
+      />
     </div>
   );
 };

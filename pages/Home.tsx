@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Page } from '../types';
+import InquiryPopup from '../components/InquiryPopup';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
 }
 
 const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
+
   return (
     <div className="space-y-16 md:space-y-24 bg-transparent">
+      {/* Inquiry Modal */}
+      <InquiryPopup 
+        isOpen={isInquiryOpen} 
+        onClose={() => setIsInquiryOpen(false)} 
+        onNavigate={onNavigate}
+      />
       {/* Hero Section */}
       <section className="relative flex flex-col items-center text-center py-8 md:py-16 bg-transparent">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 md:w-80 h-64 md:h-80 bg-brand-blue/10 blur-[100px] md:blur-[120px] -z-10 rounded-full"></div>
@@ -62,6 +71,31 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                style={{ height: '7000px' }}
              ></iframe>
           </div>
+        </div>
+      </section>
+
+      {/* Simplified Production CTA */}
+      <section className="bg-zinc-950/40 border-4 border-white/10 rounded-[2.5rem] md:rounded-[5rem] p-10 md:p-20 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 blur-[100px] -z-10 rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-brand-red/20 transition-all duration-700"></div>
+        
+        <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+          <div className="space-y-4">
+            <span className="text-brand-blue font-bold tracking-[0.5em] text-[10px] md:text-xs uppercase block">Secure Connection Required//</span>
+            <h3 className="text-4xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.9] text-white">
+              Professional<br/>
+              <span className="text-brand-red italic">Production//</span>
+            </h3>
+            <p className="text-white/40 text-xs md:text-sm font-medium tracking-wider uppercase max-w-xl mx-auto italic">
+              "Bespoke drum programming. Custom sound design. High-fidelity sonic architecture for the elite frequency."
+            </p>
+          </div>
+          
+          <button 
+            onClick={() => setIsInquiryOpen(true)}
+            className="bg-white text-black font-black px-10 md:px-16 py-5 md:py-6 rounded-full text-base md:text-xl tracking-[0.3em] uppercase hover:bg-brand-red hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-[0_10px_40px_rgba(255,255,255,0.1)] border-4 border-transparent hover:border-white"
+          >
+            Contact Production//
+          </button>
         </div>
       </section>
 

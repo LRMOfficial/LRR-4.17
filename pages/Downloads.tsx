@@ -1,38 +1,25 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
+import InquiryPopup from '../components/InquiryPopup';
+import { Page } from '../types';
 
 const GOOGLE_DRIVE_LINK = "https://drive.google.com/drive/folders/1_xQ6vQlsyIZN9FCOPJRNOKKYM1G4qOtP?usp=drive_link";
-const FORMSPREE_ID = "maqyqobv";
 
-const Downloads: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+interface DownloadsProps {
+  onNavigate?: (page: Page) => void;
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, type: 'Drum Kit Requests' }),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setEmail("");
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
-      setStatus('error');
-    }
-  };
+const Downloads: React.FC<DownloadsProps> = ({ onNavigate }) => {
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   return (
     <div className="space-y-20 pb-20">
+      <InquiryPopup 
+        isOpen={isInquiryOpen} 
+        onClose={() => setIsInquiryOpen(false)} 
+        onNavigate={onNavigate}
+      />
       <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-brand-blue/20 to-brand-red/10 border border-white/10 p-12 md:p-20 flex flex-col items-center text-center space-y-8">
         <div className="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         
@@ -80,32 +67,14 @@ const Downloads: React.FC = () => {
             <h4 className="text-xl font-bold uppercase tracking-tight text-white">Need custom sounds?</h4>
             <p className="text-white/40 text-[11px] font-medium tracking-wider uppercase">Join the production queue for professional sound design and bespoke drum programming.</p>
           </div>
-          
-          {status === 'success' && (
-            <p className="text-brand-blue text-[10px] font-bold tracking-widest uppercase animate-pulse">
-              Signal received. We'll be in touch//
-            </p>
-          )}
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
-          <input 
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="YOUR_EMAIL@SONIC.VIBE"
-            required
-            disabled={status === 'submitting'}
-            className="bg-black/40 border border-white/10 rounded-full px-8 py-4 text-white text-[10px] font-bold tracking-[0.2em] outline-none focus:border-brand-blue/50 transition-all min-w-[280px]"
-          />
-          <button 
-            type="submit"
-            disabled={status === 'submitting'}
-            className="whitespace-nowrap bg-brand-red text-white font-bold px-10 py-4 rounded-full text-[10px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all transform active:scale-95 disabled:opacity-50"
-          >
-            {status === 'submitting' ? 'Connecting...' : 'Contact Production//'}
-          </button>
-        </form>
+        <button 
+          onClick={() => setIsInquiryOpen(true)}
+          className="whitespace-nowrap bg-brand-red text-white font-bold px-10 py-5 rounded-full text-[10px] tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-all transform active:scale-95 shadow-lg shadow-brand-red/20"
+        >
+          Contact Production//
+        </button>
       </div>
       
       {/* Disclaimer Section */}
