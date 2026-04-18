@@ -4,28 +4,32 @@ import { motion } from 'motion/react';
 const Privacy: React.FC = () => {
   const sections = [
     {
-      title: "Navigation//",
-      content: "Life Row Records values your privacy as much as your vibe. This policy outlines how we handle the signals (data) you transmit to us."
+      title: "1. Introduction",
+      content: "This Privacy Policy describes how Life Row Records ('we', 'us', or 'our') collects, uses, and protects your personal information in connection with our website and services. We are committed to ensuring the confidentiality and security of the data provided by our users."
     },
     {
-      title: "Signal Collection//",
-      content: "We collect information you choose to provide, such as your email address for our vibe updates, or information provided during merch purchases. We also collect non-personally identifiable technical data to optimize your experience on our frequency."
+      title: "2. Information Collection",
+      content: "We collect personal information that you voluntarily provide to us, including but not limited to your name, email address, and phone number when you register for updates, contact our production department, or engage in commercial transactions. We also automatically collect certain technical information, such as IP addresses and browser types, to analyze site traffic and improve user experience."
     },
     {
-      title: "Frequency Usage//",
-      content: "Your data is used solely to enhance your connection with Life Row Records—fulfilling orders, sending updates you've requested, and improving our sonic portal. We do not sell your vibes to third parties."
+      title: "3. No Sharing of Personal Information",
+      content: "Life Row Records maintains a strict policy regarding the privacy of our users. We do not sell, rent, trade, or otherwise share your email address or phone number with third-party organizations for marketing or commercial purposes. Your contact information is used exclusively for internal operations and requested communications."
     },
     {
-      title: "Harmony & Protection//",
-      content: "We implement robust security measures to protect your information from unauthorized access or interference. We strive to maintain a pure connection."
+      title: "4. Use of Information",
+      content: "The information we collect is utilized to provide and improve our services, process transactions, communicate administrative updates, and deliver requested content. We may also use data for internal analytical purposes to enhance the technical performance of our platform."
     },
     {
-      title: "Your Resonance//",
-      content: "You have the right to opt-out of any communications, request access to the data we hold, or ask for your data to be erased from our archives at any time."
+      title: "5. Data Security",
+      content: "We implement industry-standard administrative, technical, and physical security measures to safeguard your personal information against unauthorized access, disclosure, or modification. While we strive to protect your data, no transmission over the internet can be guaranteed as completely secure."
     },
     {
-      title: "Sonic Cookies//",
-      content: "We use small data files (cookies) to help us understand how you use our site and to remember your preferences. You can adjust your browser settings to decline cookies, but it may affect some features of the frequency."
+      title: "6. Your Rights and Choices",
+      content: "Users possess the right to access, rectify, or request the deletion of their personal data maintained in our records. You may opt-out of promotional communications at any time by following the unsubscribe instructions provided in such transmissions."
+    },
+    {
+      title: "7. Cookies and Tracking Technologies",
+      content: "Our website utilizes cookies and similar tracking technologies to monitor site activity and store user preferences. You may configure your browser settings to refuse cookies; however, please note that certain components of our services may not function as intended without them."
     }
   ];
 
@@ -36,14 +40,14 @@ const Privacy: React.FC = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="inline-block bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase italic"
+          className="inline-block bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
         >
-          Governance//
+          Legal Compliance//
         </motion.div>
-        <h2 className="text-5xl md:text-8xl font-bold italic tracking-tighter uppercase leading-[0.9] text-white">
+        <h2 className="text-5xl md:text-8xl font-bold tracking-tighter uppercase leading-[0.9] text-white">
           PRIVACY<br/><span className="text-brand-blue">POLICY//</span>
         </h2>
-        <p className="text-white/40 text-[10px] font-bold tracking-[0.4em] uppercase">Last Updated: April 2026</p>
+        <p className="text-white/40 text-[10px] font-bold tracking-[0.4em] uppercase">Effective Date: April 18, 2026</p>
       </div>
 
       <div className="grid gap-12 md:gap-16">
