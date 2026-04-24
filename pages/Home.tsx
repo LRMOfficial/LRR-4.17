@@ -21,6 +21,15 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center text-center py-8 md:py-16 bg-transparent">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 md:w-80 h-64 md:h-80 bg-brand-blue/10 blur-[100px] md:blur-[120px] -z-10 rounded-full"></div>
+        
+        <div className="mb-8 md:mb-10 w-32 md:w-48 animate-fade-in">
+          <img 
+            src="https://i.imgur.com/Sinn3wO.png" 
+            alt="Life Row Records Logo" 
+            className="w-full h-auto drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+          />
+        </div>
+
         <div className="mb-4 md:mb-6 inline-block bg-brand-plum text-black px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase animate-fade-in-up">
           Providing Super Soulful Sonics//
         </div>

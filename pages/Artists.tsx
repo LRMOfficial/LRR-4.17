@@ -8,7 +8,7 @@ const mockArtists: Artist[] = [
     name: 'OCSol//',
     genre: 'Elite Producer',
     bio: 'OCSol is the divine sonic counterpart to Magnolia. A low-key architect of rhythm dwelling beyond the physical plane, he weaves together lo-fi textures and modern RnB with a singular focus: radiating pure joy into the world\'s frequency.',
-    imageUrl: 'https://i.imgur.com/FHXe4GZ.png',
+    imageUrl: 'https://i.imgur.com/pk9cQBG.png',
     discography: [
       { 
         title: 'Nostalgia Blaze', 
@@ -30,7 +30,7 @@ const mockArtists: Artist[] = [
     name: 'Magnolia//',
     genre: 'The Flower Child',
     bio: 'Magnolia provides the breath and soul to OCSol’s intricate production. With a flow that oscillates between raw grit and heartfelt poetry, he defines the modern lyricist—effortlessly shifting from deep-bag introspection to unbridled vocal energy.',
-    imageUrl: 'https://i.imgur.com/LjDpFw1.png',
+    imageUrl: 'https://i.imgur.com/AGbJocQ.png',
     discography: [
       { 
         title: 'I Rock A Lot EP', 
@@ -49,20 +49,20 @@ const mockArtists: Artist[] = [
   },
   {
     id: '3',
-    name: 'Majestic//',
-    genre: 'Master Of Waves',
-    bio: 'The singer of all singers. Majestic commands the room with hood-inspired soul and an energy that stands unparalleled in the industry. Pure gold in human form, he transforms every note into a captivating sonic experience.',
-    imageUrl: 'https://i.imgur.com/Oz4Hiey.png',
+    name: 'DJ DeeMO//',
+    genre: 'Turntable Specialist',
+    bio: 'A master of the decks and a cornerstone of the Life Row rhythmic engine. DJ DeeMO translates raw street energy into high-fidelity sonic experiences, specializes in deep-cut curation and the art of the infinite groove.',
+    imageUrl: 'https://i.imgur.com/ZmdgEmO.png',
     discography: [
       { 
-        title: 'Girlfriend', 
-        link: 'https://www.youtube.com/watch?v=_yBjHk4-gCo'
+        title: 'Vibe Session Vol. 1', 
+        link: 'https://ocsol.bandcamp.com/album/beats-to-sip-to-vol-1-mix'
       }
     ],
     socials: { 
-      instagram: 'https://www.instagram.com/uglyfacemusic_/', 
-      youtube: 'https://www.youtube.com/@jeremiahwilson5953',
-      bandcamp: '#' 
+      bandcamp: '#', 
+      instagram: '#',
+      youtube: '#'
     }
   }
 ];
